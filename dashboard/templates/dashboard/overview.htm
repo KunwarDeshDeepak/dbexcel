@@ -1,0 +1,47 @@
+{% load static %}
+<head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <style>
+            body{
+                background-color: #e1e8eb;
+                font-family: 'Lato', sans-serif;
+                color: #788388;
+            }
+            .head{
+                text-align: center;
+                background-color: white;
+                width: 80%;
+                margin: auto;
+                height: 100%;
+                box-shadow: 1px 1px rgb(160, 155, 155);  
+            }
+            .head h2{
+                font-family: 'Lato', sans-serif;
+                font-weight: 700;
+                letter-spacing: 2px;
+                color: #788388;
+            }
+            .head img{
+                padding: 10px;
+                width: 60px;
+            }
+    </style>
+</head>
+
+<div class="head">
+        <img src="{% static 'images/JIRA.jpg' %}" alt="spreadsheet logo" class="logo">
+        <h2>Almost finished here!</h2>
+        <form action="/dashboard/config/" method="POST">{% csrf_token %}
+        {% if context.actionStep == 0 %}
+        <div class="card">
+            <input type="hidden" name="halfdone" value="{{context}}">
+            <button type="submit" style="background-color:white;color:blue;border:none;">Your Action currently lacks an second step. Add it now!</button>
+        </div>
+        {% else %}
+            Test is successful
+            Your Action is ready.
+            <a href="/dashboard/">Goto Dashboard</a>
+        {% endif %}
+        
+        </form>
+    </div>

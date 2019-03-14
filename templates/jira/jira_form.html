@@ -1,0 +1,26 @@
+{% extends 'jira/base.html' %}
+
+{% block content %}
+   <div>
+    <h2>Please fill your details:</h2>
+      <form method="POST" class="post-form" style="text-align:center;margin-top:30px;">{% csrf_token %}
+
+          <div>
+            <div class="jiraDivForm">
+              <label for="url" class="jiraLabel">Url</label>
+              <input id="url" name="url" type="url" class="jiraForm">
+            </div>
+            <div class="jiraDivForm">
+              <label for="email" class="jiraLabel">Email</label>
+              <input id="email" name="email" type="email" class="jiraForm">
+            </div>
+            <div class="jiraDivForm">
+              <label for="password" class="jiraLabel">Password</label>
+              <input id="password" name="password" type="password" class="jiraForm">
+            </div>
+          </div>
+        <!--{{form.as_table }}-->
+        <button type="submit" class="btn">Continue</button>
+      </form>
+   </div>
+{% endblock %}

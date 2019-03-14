@@ -1,0 +1,30 @@
+{% extends './layout.htm' %}
+{% block zap %}
+{% load static %}
+<div class="newaccountcontainer">
+    <h2>Connected Accounts</h2>
+    <select name="newaccount" id="">
+        <option value="">Connect a new Account</option>
+        <option value="googlesheets">Google Sheets</option>
+        <option value="jira">Jira</option>
+        <option value="trello">Trello</option>
+    </select>
+</div>
+<div class="myconnections">
+    <h4>My Connections</h4>
+    {% for item in context.conlist %}
+    <div class="card">
+        <img src="{% static 'images/spreadsheet.png' %}" style="width:40px;" alt="icon">
+        <div class="condetails">
+           <div>{{item.name}}</div> <br>
+            {{item.email}}
+            {{item.created_at}}
+            Used_in {{item.used_in}} Zap
+        </div>
+        <a href="#">Test</a>
+        <a href="#">Disconnect</a>
+        <a href="#">Reconnect</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

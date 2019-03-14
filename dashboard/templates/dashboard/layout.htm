@@ -1,0 +1,370 @@
+{% load static %}
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+                <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+                
+                <style>
+                        @keyframes moveInLeft {
+                            0% {
+                              opacity: 0;
+                              transform: translateX(-10rem); }
+                            80% {
+                              transform: translateX(1rem); }
+                            100% {
+                              opacity: 1;
+                              transform: translate(0); } }
+
+                              @keyframes moveInRight {
+                                0% {
+                                  opacity: 0;
+                                  transform: translateX(10rem); }
+                                80% {
+                                  transform: translateX(-1rem); }
+                                100% {
+                                  opacity: 1;
+                                  transform: translate(0); } }
+                              
+                              @keyframes moveInBottom {
+                                0% {
+                                  opacity: 0;
+                                  transform: translateY(3rem); }
+                                  50%{
+                                      opacity: 0.7;
+                                      transform: translateY(2rem);
+                                  }
+                                100% {
+                                  opacity: 1;
+                                  transform: translate(0); } }      
+                        *,body{
+                            font-family: 'Lato', sans-serif;
+                            
+                        }
+                        .header{
+                            display: grid;
+                            background-color: #ffffff;
+                            grid-template-columns: 3fr 5fr 2fr;
+                            
+                        }
+                            .logo{
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 900;
+                                color: #fa4d3b;
+                                justify-self: center;
+                                align-self: center;
+
+                            }
+                            .nav{
+                                
+                            }
+                            .nav li{
+                                font-family: 'Lato', sans-serif;
+                                color: #788388;
+                                text-decoration: none;
+                                list-style: none;
+                                float: left;
+                                margin-right: 10vw;
+                            }
+                            .nav a{
+                                background-color: #0e5ecc;
+                                color: white;
+                                padding: 10px;
+                                border-radius:5px; 
+                                text-decoration: none;
+                            }
+                            .nav a:hover{
+                                color: black;
+                            }
+                            .account{
+                                justify-self: center;
+                                align-self: center;
+                            }
+                            .account>a{
+                                margin-right: 3vw;
+                                text-decoration: none;
+                                background-color: #dadfe2;
+                                color: black;
+                                padding: 9px;
+                                border-radius:5px; 
+                            }
+                        .secondarynav{
+                            background-color: #ffffff;
+                            width: 100%;
+                            height: 5.7%;
+                            
+                        }
+                        .secondarynav ul{
+                            background-color: #ffffff;
+                            margin:20px 0px;
+                        }
+                        .secondarynav ul li{
+                            font-family: 'Lato', sans-serif;
+                            color: #788388;
+                            list-style: none;
+                            margin: 0;
+                            padding: 15px; 
+                            display: inline;
+                        }
+                        .secondarynav ul li a{
+                            text-decoration: none;
+                            color: #788388;
+                        }
+                        .secondarynav ul li a:hover{
+                            color: black;
+                            padding-bottom: 15px;
+                            border-bottom: 3px solid #499df3;
+                        }
+                        .dashcontainer{
+                            width: 100%;
+                            height: 55%;
+                            clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+                            background-image: linear-gradient(to right bottom, rgba(111, 147, 213, 0.8), rgba(54, 40, 180, 0.8)), url("{% static 'images/natours.jpg' %}");
+                            background-color: white;
+                            margin-bottom: 3vh;
+                        }
+                        .dbtoexcel{
+                            position: relative;
+                            top:40%;
+                            left:50%;
+                            transform: translate(-50%,-40%);
+                            text-align: center;
+                        }
+                        .dbtoexcel h2{
+                            text-transform: uppercase;
+                            letter-spacing: 8px;
+                            animation-name: moveInLeft;
+                            animation-duration: .7s;
+                            animation-timing-function: ease-out;
+                            transition: all .1s;
+                        }
+                        .dbtoexcel p{
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            margin-bottom: 25px;
+                            animation-name: moveInRight;
+                            animation-duration: .7s;
+                            animation-timing-function: ease-out;
+                            transition: all .1s;
+                        }
+                        .dbtoexcel a{
+                            text-decoration: none;
+                            padding: 10px 50px;
+                            background-color: #0e5ecc;
+                            color: white;
+                            border-radius: 50px;
+                            
+                            animation: moveInBottom .5s ease-out .75s;
+                            animation-fill-mode: backwards; 
+                        }
+                        .newaccountcontainer{
+                            font-family: 'Lato', sans-serif;
+                            color: #788388;
+                        }
+                        .newaccountcontainer h2{
+                            padding: 0;
+                            margin:0;
+                        }
+                        .newaccountcontainer select{
+                            font-family: 'Lato', sans-serif;
+                            color: #788388;
+                            width: 30%;
+                            height: 30px;
+                            background-color: white;
+                            border: none;
+                        }
+                        .myconnections{
+                            font-family: 'Lato', sans-serif;
+                            color: #788388;
+                        }
+                        .myconnections .card{
+                            display: grid;
+                            grid-template-columns: 1fr 10fr 2fr 2fr 2fr;
+                            width:90%;
+                            border: 1px solid #dadfe2;
+                            padding:10px;
+                            margin-bottom: 10px;    
+                        }
+                        .myconnections .card a{
+                            text-align: center;
+                            justify-self: center;
+                            align-self: center;
+                            text-decoration:none;
+                            color: #696e6e;
+                            background-color:#f1f4f5; 
+                            padding:10px 0px;
+                            border:1px solid #dadfe2;
+                            border-radius: 6px; 
+                            width: 90%;
+                        }
+                        .myconnections .card a:hover{
+                            background-color: #898a8b;
+                        }
+                        .myconnections .card img{
+                            align-self: center;
+                        }
+                        .myconnections .card .condetails>div{
+                            border-bottom: 1px solid #dadfe2;
+                        }
+                        .dashfooter{
+                            background-color: #ffffff;
+                            border-top: 1px solid #dadfe2;
+                            padding-top: 10px;
+                            font-family: 'Lato', sans-serif;
+                            color: #788388;
+                            width: 100%;
+                            height: 20%;
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                        }
+                        .message{
+                            grid-column: 1/2;
+                        }
+                        .followus{
+                            grid-column: 1/2;
+                        }
+                        .footernavs{
+                            grid-column: 2/3;
+                            justify-self: end;
+                        }
+                        .footernavs a{
+                            font-family: 'Lato', sans-serif;
+                            margin-right:5vw; 
+                            color: #788388;
+                            font-weight: 900;
+                            text-decoration: none;
+                        }
+                        .footernavs a:hover{
+                            color: black;
+                        }
+                        .tc{
+                            grid-column: 2/3;
+                            justify-self: end;
+                        }
+                        @media screen and (max-width:1080px){
+                            .header{
+                                display: grid;
+                                grid-template-columns:repeat(1fr,5);
+                            }
+                            .logo{
+                                grid-column:1/6;
+                            }
+                            .nav{
+                                grid-column:1/3;
+                            }
+                            .account{
+                                grid-column:3/6;
+                            }
+                        
+                        }
+                        
+                        @media screen and (max-width:640px){
+                            .header{
+                                display:flex;
+                                flex-direction:column;
+                                border:none;
+                            }
+                            .nav{
+                                border:none;
+                            }
+                            .nav ul{
+                                display:flex;
+                                flex-direction:column;
+                            }
+                            .nav ul li{
+                                text-align:center;
+                                transform:translate(4%);
+                                padding:6px;
+                                padding-bottom:20px;
+                        
+                            }
+                            .nav a{
+                                text-align:center;
+                                transform:translate(-2%);
+                            }
+                            .account{
+                                display:none;
+                            }
+                        }
+                        @media screen and (max-width:470px){
+                            .secondarynav{
+                                border:none;
+                            }
+                            .secondarynav ul{
+                                display:flex;
+                                flex-direction:column;
+                                text-align:center;
+                            }
+                            .dashcontainer{
+                                display:block;
+                                position:relative;
+                                top:15vh;
+                            }
+                            .myconnections .card{
+                                display:flex;
+                                flex-direction:column;
+                            }
+                            .myconnections .card .condetails>div{
+                                border:none;
+                            }
+                        }
+                </style>
+    </head>
+    <main>
+        <div class="header">
+            <div class="logo">
+                    <!--<img src="{% static 'DBExcelLogo.jpg' %}" style="width:95px" alt="logo">-->
+                <h1>DBtoExcel</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                        
+                    <li><a href="#">Google sheets</a></li>
+                    <li><a href="/jira/">Jira config</a></li>
+                    <a href="{% url 'config' %}">New action</a>
+                </ul>
+            </div>
+            <div class="account">
+                <a href="#">PS</a>
+                <i class="fa fa-bell"></i>
+            </div>
+        </div>
+        <div class="secondarynav">
+            <ul>
+                <li><a href="#">Zaps</a> </li>
+                <li><a href="#">Task History</a></li>
+                <li><a href="#">Connected Accounts</a></li>
+            </ul>
+        </div>
+        <div class="dashcontainer">
+            {% block zap %}
+            {% endblock %}
+            <div class="dbtoexcel">
+                <h2 class="containermainheading">DBtoExcel</h2>
+                <p class="subheading">Makes your life easy</p>
+                <a href="{% url 'config' %}">Create action</a>
+            </div>
+        </div>
+        <div class="dashfooter">
+            <div class="message">
+                DBtoExcel makes you happier :)
+            </div>
+            <div class="footernavs">
+                    <a href="#">Plans</a>
+                    <a href="#">Help</a>
+                    <a href="#">Developer platform</a>
+                    <a href="#">Jobs</a>
+            </div>
+            <div class="followus">
+                Follow us
+                <img src="{% static 'images/facebook.png' %}" style="width:15px" alt="F">
+                <img src="{% static 'images/linkedin.png' %}" style="width:15px" alt="in">
+                <img src="{% static 'images/twitter.png' %}" style="width:15px" alt="Tw">
+                <img src="{% static 'images/youtube.png' %}" style="width:15px" alt="Y">
+            </div>
+            <div class="tc">
+                @ 2019 DBtoExcel Inc .
+            </div>
+        </div>
+    </main>
+</html>

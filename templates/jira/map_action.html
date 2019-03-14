@@ -1,0 +1,79 @@
+<head>
+    <style>
+        .container {
+            width: 80%;
+            height: 50%;
+            position: absolute;
+            left: 10%;
+            top:30%;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .dropdowns{
+            margin-top: 30px;
+            display: block;
+        }
+        .dropdowns select option *{
+            height: 30px !important;
+        }
+        .buttons{
+            display: block;
+            position: relative;
+            text-align: center;
+            top:30vh;
+        }
+        .btn {
+            width: 10vw;
+            height: 6vh;
+            margin: 0;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #489df3;
+            box-shadow: 2px 3px rgba(0, 0, 0, 0.192);
+
+        }
+
+        .dropdown {
+            width: 30vw;
+            height: 6vh;
+            border-radius: 4px;
+            background-color: white;
+            border-bottom: 1px solid rgba(184, 181, 181, 0.384)
+        }
+        .dropdown:hover{
+            color: blue;
+        }
+        .one{
+            float: left;
+            margin-left: 5vw;
+        }
+        .two{
+            float: right;
+            margin-right:5vw;
+        }
+    </style>
+</head>
+
+<body style="background-color:#f1f4f5">
+    <form method="post" class="container">
+        {% csrf_token %}
+        <div class="dropdowns">
+        <select name="" class="dropdown one">
+            {% for item in context.jira_actions_list %}
+            <option id="jira_action_drop" value="{{ context }}">{{ item.action }}</option>
+            {% endfor %}
+        </select>
+        <select name="" class="dropdown two">
+            {% for item in context.sheet_list %}
+            <option id="sheet_action_drop" value="{{ context }}">{{ item.title }}</option>
+
+            {% endfor %}
+        </select>
+        </div>
+        <div class="buttons">
+        <button  type="submit" class="btn">Create</button>
+        </div>
+    </form>
+
+</body>

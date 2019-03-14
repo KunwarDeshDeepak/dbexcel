@@ -1,0 +1,12 @@
+{% extends 'jira/base.html' %}
+
+{% block content %}
+   <div style="text-align:center;">
+    <h2>Please add your details:</h2>
+      <form method="POST" class="post-form" action="submit/">{% csrf_token %}
+          <label for="google">Enter your google code here:</label>
+        <input type="text" name="google" id="google">
+        <button type="submit" class="btn" style="margin-left:10px;margin-bottom:18px;">Save</button>
+      </form>
+   </div>
+{% endblock %}

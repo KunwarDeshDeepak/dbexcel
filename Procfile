@@ -1,0 +1,1 @@
+web: gunicorn dbexcel.wsgi --log-file -

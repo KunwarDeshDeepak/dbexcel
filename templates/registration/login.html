@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login to DBtoExcel</title>
+
+    <style>
+
+      body{
+        background-image: url("{% static 'background.jpg' %}");
+      }
+
+        .form-container {
+          text-align:center;
+          border: 1px solid black;
+          margin:120px 350px;
+          padding: 100px 0 100px;
+          background-color: rgba(255,255,255, 0.4)
+        }
+
+        .btn {
+           color: white;
+           background-color: green;
+           padding: 10px 15px;
+           border: 0;
+           font-weight:bold;
+        }
+
+        input{
+          padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+ <div class="form-container">
+     <h2 style="margin-bottom:50px;">Login to DBtoExcel</h2>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn">Login</button>
+  </form>
+ </div>
+</body>
+</html>
