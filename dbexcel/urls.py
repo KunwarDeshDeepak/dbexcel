@@ -23,7 +23,7 @@ from hiway.urls import url_patterns_hiway
 from dashboard.urls import url_patterns_dashboard
 
 urlpatterns = [
-    path('googleef42bae5a39aace7.html/', google_domain_verification),
+    path('googlea73117b61cc11fc2.html/', google_domain_verification),
     path('hiway/', include(url_patterns_hiway)),
     path('jira/', include(url_patterns)),
     path('sheets/', include(url_patterns_sheet)),

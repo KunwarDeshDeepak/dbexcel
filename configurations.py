@@ -1,1 +1,1 @@
-server_url = "https://bdbcde2a.ngrok.io"
+server_url = "https://b536ab97.ngrok.io"

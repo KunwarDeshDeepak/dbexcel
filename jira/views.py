@@ -21,6 +21,7 @@ def jira_webhook(request):
     webhook_event = request.data.get('webhookEvent')
 
     if webhook_event == 'jira:issue_created' or webhook_event == 'jira:issue_updated':
+        print('Jira Webhook called')
         url = request.data.get('user').get('self')
 
         jira_user = get_user(url)

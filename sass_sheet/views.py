@@ -86,7 +86,7 @@ def create_action_map(request):
 
     token = user_creds.token
 
-    # create_channel(token, sheet_id)
+    create_channel(token, sheet_id)
 
     header_list = []
     if sass_action == 'Create new issue':
@@ -205,8 +205,11 @@ def create_channel(token, sheet_id):
 
         "id": uuid_str,
         "type": "web_hook",
-        "address": server_url + '/sheets/webhook/',
-        'expiration': expiration_time
+        "address":"https://dbexcel.herokuapp.com/sheets/webhook"
+        #"address": "https://kddeepak.pythonanywhere.com/webhook/"
+
+        #"address": server_url + '/sheets/webhook/'
+        # , 'expiration': expiration_time
 
     }
 
@@ -224,7 +227,7 @@ def create_channel(token, sheet_id):
 
 
 def google_domain_verification(request):
-    return HttpResponse("google-site-verification: googleef42bae5a39aace7.html")
+    return HttpResponse("google-site-verification: googlea73117b61cc11fc2.html")
 
 
 def add_header_to_spreadsheet_new_issue(data):
